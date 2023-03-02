@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Marcas</h1>
+
+    {% if brand_list %}
+    <ul>
+
+      {% for brand in brand_list %}
+      <li>
+        <a href="{{ brand.get_absolute_url }}">{{ brand.name }}</a> :
+        {% for category in brand.categories.all %}
+          <em><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></em>
+        {% endfor %}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay ninguna marca cargada</p>
+    {% endif %}
+{% endblock %}
