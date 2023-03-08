@@ -4,9 +4,9 @@ from .models import Category
 
 class CategoryListView(generic.ListView):
     model = Category
-    template_name = 'categories/templates/category_list.html'
+    template_name = 'modules/categories/templates/category_list.html'
 
 
 class CategoryDetailView(generic.DetailView):
     model = Category
-    template_name = 'categories/templates/category_detail.html'
+    template_name = 'modules/categories/templates/category_detail.html'

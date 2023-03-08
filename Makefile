@@ -29,6 +29,9 @@ coverage:
 	@printf '  \033[0m **** '
 	@echo
 
+flake:
+	flake8 .
+
 clean:
 	rm -Rf .pytest_cache
 	find . -type d -name __pycache__ -exec rm -rf {} \+

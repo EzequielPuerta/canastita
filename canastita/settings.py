@@ -65,7 +65,7 @@ ROOT_URLCONF = 'canastita.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'api')], #[os.path.join(BASE_DIR, 'api', mod_app_dir_name, 'templates') for mod_app_dir_name in MODULE_APP_DIR_NAMES],
+        'DIRS': [os.path.join(BASE_DIR, 'api')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

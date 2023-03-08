@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .brands.models import Brand
-from .categories.models import Category
-from .products.models import Product
+from .modules.brands.models import Brand
+from .modules.categories.models import Category
+from .modules.products.models import Product
+
 
 class CategorizedItemAdmin(admin.ModelAdmin):
     def display_categories(self, brand):
         return ",".join((str(category) for category in brand.categories.all()))
-
 
     display_categories.short_description = Category._meta.verbose_name_plural
 

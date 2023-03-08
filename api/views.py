@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .brands.models import Brand
+from .modules.brands.models import Brand
 
 
 def index(request):
@@ -11,4 +11,4 @@ def index(request):
     return render(
         request,
         'index.html',
-        context={'brands_amount':brands_amount})
+        context={'brands_amount': brands_amount})

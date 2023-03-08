@@ -2,27 +2,25 @@ from django.db import models
 from django.urls import reverse
 
 
-class Brand(models.Model):
+class Category(models.Model):
     """
-    Product brand
+    Product category
     """
     name = models.CharField(max_length=256, help_text="Name", verbose_name="Name")
-    categories = models.ManyToManyField('Category', help_text="Related categories", related_name="brands")
-
 
     class Meta:
         ordering = ["id", "name"]
-
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
 
     def __str__(self) -> str:
         """
-        String representation of the Brand instance
+        String representation of the Category instance
         """
         return self.name
 
-
     def get_absolute_url(self):
         """
-        Returns the url for a particular Brand instance
+        Returns the url for a particular Category instance
         """
-        return reverse('brand-detail', args=[str(self.id)])
+        return reverse('category-detail', args=[str(self.id)])
